@@ -1187,11 +1187,11 @@ Note: There are many naming options for directives, especially since they can be
     *Why?*: DOM manipulation can be difficult to test, debug, and there are often better ways (e.g. CSS, animations, templates)
 
 ### Provide a Unique Directive Prefix
-(Corvus: Optional) - until we choose a prefix
+(Corvus: Required)
 ###### [Style [Y073](#style-y073)]
 
   - Provide a short, unique and descriptive directive prefix such as `acmeSalesCustomerInfo` which would be declared in HTML as `acme-sales-customer-info`.
-
+  - (Corvus) use `cv-` prefix for components and directives.
     *Why?*: The unique short prefix identifies the directive's context and origin. For example a prefix of `cc-` may indicate that the directive is part of a CodeCamper app while `acme-` may indicate a directive for the Acme company.
 
     Note: Avoid `ng-` as these are reserved for Angular directives. Research widely used directives to avoid naming conflicts, such as `ion-` for the [Ionic Framework](http://ionicframework.com/).
