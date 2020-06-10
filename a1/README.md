@@ -215,7 +215,7 @@ While this guide explains the *what*, *why* and *how*, I find it helpful to see 
   *Why?*: Unique names help avoid module name collisions. Separators help define modules and their submodule hierarchy. For example `app` may be your root module while `app.dashboard` and `app.users` may be modules that are used as dependencies of `app`.
 
 ### Definitions (aka Setters)
-(Corvus: Required) - already using
+(Corvus: Required)
 ###### [Style [Y021](#style-y021)]
 
   - Declare modules without a variable using the setter syntax.
@@ -246,7 +246,7 @@ While this guide explains the *what*, *why* and *how*, I find it helpful to see 
   ```
 
 ### Getters
-(Corvus: Required) - already using
+(Corvus: Required)
 ###### [Style [Y022](#style-y022)]
 
   - When using a module, avoid using a variable and instead use chaining with the getter syntax.
@@ -271,7 +271,7 @@ While this guide explains the *what*, *why* and *how*, I find it helpful to see 
   ```
 
 ### Setting vs Getting
-(Corvus: Required) - already using
+(Corvus: Required)
 ###### [Style [Y023](#style-y023)]
 
   - Only set once and get for all other instances.
@@ -329,7 +329,7 @@ While this guide explains the *what*, *why* and *how*, I find it helpful to see 
 ## Controllers
 
 ### controllerAs View Syntax
-(Corvus: Optional)
+(Corvus: Required)
 ###### [Style [Y030](#style-y030)]
 
   - Use the [`controllerAs`](http://www.johnpapa.net/do-you-like-your-angular-controllers-with-or-without-sugar/) syntax over the `classic controller with $scope` syntax.
@@ -355,7 +355,7 @@ While this guide explains the *what*, *why* and *how*, I find it helpful to see 
   ```
 
 ### controllerAs Controller Syntax
-(Corvus: Optional)
+(Corvus: Required)
 ###### [Style [Y031](#style-y031)]
 
   - Use the `controllerAs` syntax over the `classic controller with $scope` syntax.
@@ -383,7 +383,7 @@ While this guide explains the *what*, *why* and *how*, I find it helpful to see 
   ```
 
 ### controllerAs with vm
-(Corvus: Optional)
+(Corvus: Required)
 ###### [Style [Y032](#style-y032)]
 
   - Use a capture variable for `this` when using the `controllerAs` syntax. Choose a consistent variable name such as `vm`, which stands for ViewModel.
@@ -676,7 +676,7 @@ While this guide explains the *what*, *why* and *how*, I find it helpful to see 
   ```
 
 ### Keep Controllers Focused
-(Corvus: Required) - already using
+(Corvus: Required)
 ###### [Style [Y037](#style-y037)]
 
   - Define a controller for a view, and try not to reuse the controller for other views. Instead, move reusable logic to factories and keep the controller simple and focused on its view.
@@ -684,7 +684,7 @@ While this guide explains the *what*, *why* and *how*, I find it helpful to see 
     *Why?*: Reusing controllers with several views is brittle and good end-to-end (e2e) test coverage is required to ensure stability across large applications.
 
 ### Assigning Controllers
-(Corvus: Optional)
+(Corvus: Required)
 ###### [Style [Y038](#style-y038)]
 
   - When a controller must be paired with a view and either component may be re-used by other controllers or views, define controllers along with their routes.
@@ -959,7 +959,7 @@ While this guide explains the *what*, *why* and *how*, I find it helpful to see 
 ## Data Services
 
 ### Separate Data Calls
-(Corvus: Required) - already using
+(Corvus: Required)
 ###### [Style [Y060](#style-y060)]
 
   - Refactor logic for making data operations and interacting with data to a factory. Make data services responsible for XHR calls, local storage, stashing in memory, or any other data operations.
@@ -1036,7 +1036,7 @@ Note: The data service is called from consumers, such as a controller, hiding th
   ```
 
 ### Return a Promise from Data Calls
-(Corvus: Required) - already using
+(Corvus: Required)
 ###### [Style [Y061](#style-y061)]
 
   - When calling a data service that returns a promise such as `$http`, return a promise in your calling function too.
@@ -1179,7 +1179,7 @@ Note: The data service is called from consumers, such as a controller, hiding th
 Note: There are many naming options for directives, especially since they can be used in narrow or wide scopes. Choose one that makes the directive and its file name distinct and clear. Some examples are below, but see the [Naming](#naming) section for more recommendations.
 
 ### Manipulate DOM in a Directive
-(Corvus: Optional)
+(Corvus: Required)
 ###### [Style [Y072](#style-y072)]
 
   - When manipulating the DOM directly, use a directive. If alternative ways can be used such as using CSS to set styles or the [animation services](https://docs.angularjs.org/api/ngAnimate), Angular templating, [`ngShow`](https://docs.angularjs.org/api/ng/directive/ngShow) or [`ngHide`](https://docs.angularjs.org/api/ng/directive/ngHide), then use those instead. For example, if the directive simply hides and shows, use ngHide/ngShow.
@@ -1261,7 +1261,7 @@ Note: There are many naming options for directives, especially since they can be
   ```
 
 ### Directives and ControllerAs
-(Corvus: Optional)
+(Corvus: Required)
 ###### [Style [Y075](#style-y075)]
 
   - Use `controllerAs` syntax with a directive to be consistent with using `controller as` with view and controller pairings.
@@ -2229,7 +2229,7 @@ Note: The code example's dependency on `movieService` is not minification safe o
     *Why?*: Provides easy way to use task automation to load all module definitions first, then all other angular files (for bundling).
 
 ### Configuration
-(Corvus: Optional)
+(Corvus: Required)
 ###### [Style [Y128](#style-y128)]
 
   - Separate configuration for a module into its own file named after the module. A configuration file for the main `app` module is named `app.config.js` (or simply `config.js`). A configuration for a module named `admin.module.js` is named `admin.config.js`.
@@ -2317,7 +2317,7 @@ Note: The code example's dependency on `movieService` is not minification safe o
 ## Application Structure
 
 ### Overall Guidelines
-(Corvus: Required) - already using
+(Corvus: Required)
 ###### [Style [Y150](#style-y150)]
 
   - Have a near term view of implementation and a long term vision. In other words, start small but keep in mind on where the app is heading down the road. All of the app's code goes in a root folder named `app`. All content is 1 feature per file. Each controller, service, module, view is in its own file. All 3rd party vendor scripts are stored in another root folder and not in the `app` folder. I didn't write them and I don't want them cluttering my app (`bower_components`, `scripts`, `lib`).
@@ -2504,7 +2504,7 @@ Note: The code example's dependency on `movieService` is not minification safe o
 ## Startup Logic
 
 ### Configuration
-(Corvus: Optional)
+(Corvus: Required)
 ###### [Style [Y170](#style-y170)]
 
   - Inject code into [module configuration](https://docs.angularjs.org/guide/module#module-loading-dependencies) that must be configured before running the angular app. Ideal candidates include providers and constants.
@@ -2537,7 +2537,7 @@ Note: The code example's dependency on `movieService` is not minification safe o
   ```
 
 ### Run Blocks
-(Corvus: Optional)
+(Corvus: Required)
 ###### [Style [Y171](#style-y171)]
 
   - Any code that needs to run when an application starts should be declared in a factory, exposed via a function, and injected into the [run block](https://docs.angularjs.org/guide/module#module-loading-dependencies). 
@@ -2566,7 +2566,7 @@ Note: The code example's dependency on `movieService` is not minification safe o
 ## Angular $ Wrapper Services
 
 ### $document and $window
-(Corvus: Required) - already using
+(Corvus: Required)
 ###### [Style [Y180](#style-y180)]
 
   - Use [`$document`](https://docs.angularjs.org/api/ng/service/$document) and [`$window`](https://docs.angularjs.org/api/ng/service/$window) instead of `document` and `window`.
@@ -2574,7 +2574,7 @@ Note: The code example's dependency on `movieService` is not minification safe o
     *Why?*: These services are wrapped by Angular and more easily testable than using document and window in tests. This helps you avoid having to mock document and window yourself.
 
 ### $timeout and $interval
-(Corvus: Required) - already using
+(Corvus: Required)
 ###### [Style [Y181](#style-y181)]
 
   - Use [`$timeout`](https://docs.angularjs.org/api/ng/service/$timeout) and [`$interval`](https://docs.angularjs.org/api/ng/service/$interval) instead of `setTimeout` and `setInterval` .
@@ -2615,7 +2615,7 @@ Unit testing helps maintain clean code, as such I included some of my recommenda
     ```
 
 ### Testing Library
-(Corvus: Required) - already using
+(Corvus: Required)
 ###### [Style [Y191](#style-y191)]
 
   - Use [Jasmine](http://jasmine.github.io/) or [Mocha](http://mochajs.org) for unit testing.
@@ -2625,7 +2625,7 @@ Unit testing helps maintain clean code, as such I included some of my recommenda
     Note: When using Mocha, also consider choosing an assert library such as [Chai](http://chaijs.com). I prefer Mocha.
 
 ### Test Runner
-(Corvus: Required) - already using
+(Corvus: Required)
 ###### [Style [Y192](#style-y192)]
 
   - Use [Karma](http://karma-runner.github.io) as a test runner.
@@ -2700,7 +2700,7 @@ Unit testing helps maintain clean code, as such I included some of my recommenda
     *Why?*: Sinon has descriptive messages when tests fail the assertions.
 
 ### Headless Browser
-(Corvus: Required) - already using - planned to use headless Chrome
+(Corvus: Required)
 ###### [Style [Y194](#style-y194)]
 
   - Use [PhantomJS](http://phantomjs.org/) to run your tests on a server.
@@ -2805,10 +2805,10 @@ Unit testing helps maintain clean code, as such I included some of my recommenda
 ## Comments
 
 ### jsDoc
-(Corvus: Required) - already using
+(Corvus: Required)
 ###### [Style [Y220](#style-y220)]
 
-  - If planning to produce documentation, use [`jsDoc`](http://usejsdoc.org/) syntax to document function names, description, params and returns. Use `@namespace` and `@memberOf` to match your app structure.
+  - If planning to produce documentation, use [`jsDoc`](http://jsdoc.app/) syntax to document function names, description, params and returns. Use `@namespace` and `@memberOf` to match your app structure.
 
     *Why?*: You can generate (and regenerate) documentation from your code, instead of writing it from scratch.
 
@@ -3026,7 +3026,7 @@ Unit testing helps maintain clean code, as such I included some of my recommenda
 ## Constants
 
 ### Vendor Globals
-(Corvus: Optional)
+(Corvus: Required)
 ###### [Style [Y240](#style-y240)]
 
   - Create an Angular Constant for vendor libraries' global variables.
@@ -3047,7 +3047,7 @@ Unit testing helps maintain clean code, as such I included some of my recommenda
     })();
     ```
 
-(Corvus: Optional)
+(Corvus: Required)
 ###### [Style [Y241](#style-y241)]
 
   - Use constants for values that do not change and do not come from another service. When constants are used only for a module that may be reused in multiple applications, place constants in a file per module named after the module. Until this is required, keep constants in the main module in a `constants.js` file.
